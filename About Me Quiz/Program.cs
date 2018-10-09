@@ -10,15 +10,16 @@ namespace About_Me_Quiz
 
             Console.WriteLine("What state am I from?");
             string questionOne = Console.ReadLine();
+            Console.WriteLine($"You answered {questionOne}. Your answer is: {QuestionOne(questionOne)}");
 
             Console.WriteLine("Guess the day of my birth");
             int questionTwo = int.Parse(Console.ReadLine());
-
-
-
-            Console.WriteLine($"You answered {questionOne}. Your answer is: {QuestionOne(questionOne)}");
             QuestionTwo(questionTwo);
 
+            Console.WriteLine("True or false: I have a Costco membership");
+            bool questionThree = bool.Parse(Console.ReadLine());
+            QuestionThree(questionThree);
+            Console.WriteLine($"You answered {questionThree}. Your answer is: {QuestionThree(questionThree)}");
 
 
         }
@@ -33,7 +34,7 @@ namespace About_Me_Quiz
                 return "Incorrect";
         }
 
-        //Question 2: Method to check if user's integar input is correct
+        //Question 2: Method to check if user's integar input is correct, I don't understand how to return and intergar any other way than this
         static int QuestionTwo(int numInput)
         {
             if (numInput == 29)
@@ -47,5 +48,18 @@ namespace About_Me_Quiz
                 return 29-numInput;
             }
         }
+        //Question 3: Method to return boolean.
+        static bool QuestionThree(bool boolean)
+        {
+            if (boolean)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
