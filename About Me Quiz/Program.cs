@@ -21,6 +21,9 @@ namespace About_Me_Quiz
             QuestionThree(questionThree);
             Console.WriteLine($"You answered {questionThree}. Your answer is: {QuestionThree(questionThree)}");
 
+            Console.WriteLine("Do I like cats or dogs?");
+            string questionFour = Console.ReadLine();
+            Console.WriteLine($"You answered {questionFour}. The answer is {QuestionFour(questionFour)}");
 
         }
         //Question 1: Method to check users input with an if statement
@@ -44,10 +47,11 @@ namespace About_Me_Quiz
             }
             else
             {
-                Console.WriteLine($"That is incorrect. You are {29-numInput} days off");
-                return 29-numInput;
+                Console.WriteLine($"That is incorrect. You are {29 - numInput} days off");
+                return 29 - numInput;
             }
         }
+
         //Question 3: Method to return boolean.
         static bool QuestionThree(bool boolean)
         {
@@ -60,6 +64,17 @@ namespace About_Me_Quiz
                 return false;
             }
         }
-
+        
+        //Question 4: Method to check user's string input, return correct or incorrect based on input
+        static string QuestionFour(string input)
+        {
+            if (input == "dogs")
+                return "Correct, my dog is the best";
+            else
+                return "Incorrect";
+        }
+        //Question 5:
+        //static string QuestionFive()
+        //{ }
     }
 }
