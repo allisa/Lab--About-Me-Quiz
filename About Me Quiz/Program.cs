@@ -19,11 +19,15 @@ namespace About_Me_Quiz
             Console.WriteLine("True or false: I have a Costco membership");
             bool questionThree = bool.Parse(Console.ReadLine());
             QuestionThree(questionThree);
-            Console.WriteLine($"You answered {questionThree}. Your answer is: {QuestionThree(questionThree)}");
 
             Console.WriteLine("Do I like cats or dogs?");
             string questionFour = Console.ReadLine();
-            Console.WriteLine($"You answered {questionFour}. The answer is {QuestionFour(questionFour)}");
+            Console.WriteLine($"You answered {questionFour}. The answer is: {QuestionFour(questionFour)}");
+
+            Console.WriteLine("Do I have a tattoo?");
+            string questionFive = (Console.ReadLine());
+            QuestionFive(questionFive);
+            Console.WriteLine($"You answered {questionFive}. Your answer is: {QuestionFive(questionFive)}");
 
         }
         //Question 1: Method to check users input with an if statement
@@ -55,13 +59,15 @@ namespace About_Me_Quiz
         //Question 3: Method to return boolean.
         static bool QuestionThree(bool boolean)
         {
-            if (boolean)
+            if (boolean == false)
             {
-                return true;
+                Console.WriteLine("answered false. Your answer is: Correct");
+                return false;
             }
             else
             {
-                return false;
+                Console.WriteLine("answered true. Your answer is: Incorrect");
+                return true;
             }
         }
         
@@ -69,12 +75,27 @@ namespace About_Me_Quiz
         static string QuestionFour(string input)
         {
             if (input == "dogs")
+            {
                 return "Correct, my dog is the best";
+            }
             else
+            {
                 return "Incorrect";
+            }
         }
-        //Question 5:
-        //static string QuestionFive()
-        //{ }
+        
+        //Question 5: Method to check user's string input. I realize this does not account for the user
+        //entering something other than "Yes"
+        static string QuestionFive( string input)
+        {
+            if (input == "Yes")
+            {
+                return "Incorrect";
+            }
+            else
+            {
+                return "Correct";
+            }
+        }
     }
 }
